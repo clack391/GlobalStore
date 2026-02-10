@@ -12,9 +12,19 @@
     "https"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/products/": {
       "get": {
-      "description": "",
+        "description": "",
         "produces": [
           "application/json"
         ],

@@ -5,7 +5,7 @@ const doc = {
     title: 'GlobalStore API',
     description: 'E-commerce Backend'
   },
-  host: 'localhost:8080',
+  host: 'globalstore-94hn.onrender.com',
   schemes: ['http', 'https']
 };
 
