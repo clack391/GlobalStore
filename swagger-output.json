@@ -5,7 +5,7 @@
     "description": "E-commerce Backend",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "globalstore-94hn.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
@@ -14,7 +14,7 @@
   "paths": {
     "/products/": {
       "get": {
-        "description": "",
+      "description": "",
         "produces": [
           "application/json"
         ],
