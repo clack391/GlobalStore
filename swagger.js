@@ -6,7 +6,7 @@ const doc = {
     description: 'E-commerce Backend'
   },
   host: 'globalstore-94hn.onrender.com',
-  schemes: ['http', 'https']
+  schemes: ['https']
 };
 
 const outputFile = './swagger-output.json';

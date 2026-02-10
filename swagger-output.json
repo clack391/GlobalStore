@@ -8,7 +8,6 @@
   "host": "globalstore-94hn.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
