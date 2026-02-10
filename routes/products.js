@@ -18,8 +18,41 @@ const validateProduct = [
 
 router.get('/', productsController.getAll);
 router.get('/:id', productsController.getSingle);
-router.post('/', validateProduct, validation.validate, productsController.createProduct);
-router.put('/:id', validateProduct, validation.validate, productsController.updateProduct);
+router.post('/', validateProduct, validation.validate, (req, res) => {
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Product data',
+        required: true,
+        schema: {
+            name: 'iPhone 13',
+            price: 999.99,
+            description: 'The latest iPhone with A15 Bionic chip.',
+            category: 'Electronics',
+            stock: 50,
+            brand: 'Apple',
+            rating: 4.8
+        }
+    } */
+    productsController.createProduct(req, res);
+});
+
+router.put('/:id', validateProduct, validation.validate, (req, res) => {
+    /* #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Product data',
+        required: true,
+        schema: {
+            name: 'iPhone 13',
+            price: 999.99,
+            description: 'The latest iPhone with A15 Bionic chip.',
+            category: 'Electronics',
+            stock: 50,
+            brand: 'Apple',
+            rating: 4.8
+        }
+    } */
+    productsController.updateProduct(req, res);
+});
 router.delete('/:id', productsController.deleteProduct);
 
 module.exports = router;

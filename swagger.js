@@ -5,8 +5,8 @@ const doc = {
     title: 'GlobalStore API',
     description: 'E-commerce Backend'
   },
-  host: 'globalstore-94hn.onrender.com',
-  schemes: ['https']
+  host: process.env.HOST || 'localhost:8080' || 'globalstore-94hn.onrender.com',
+  schemes: ['http', 'https']
 };
 
 const outputFile = './swagger-output.json';

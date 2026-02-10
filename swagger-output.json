@@ -5,9 +5,10 @@
     "description": "E-commerce Backend",
     "version": "1.0.0"
   },
-  "host": "globalstore-94hn.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
@@ -42,29 +43,38 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Product data",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "iPhone 13"
                 },
                 "price": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 999.99
                 },
                 "description": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "The latest iPhone with A15 Bionic chip."
                 },
                 "category": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Electronics"
                 },
                 "stock": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 50
                 },
                 "brand": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Apple"
                 },
                 "rating": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 4.8
                 }
               }
             }
@@ -73,6 +83,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -121,29 +134,38 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Product data",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "iPhone 13"
                 },
                 "price": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 999.99
                 },
                 "description": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "The latest iPhone with A15 Bionic chip."
                 },
                 "category": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Electronics"
                 },
                 "stock": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 50
                 },
                 "brand": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Apple"
                 },
                 "rating": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 4.8
                 }
               }
             }
@@ -205,20 +227,26 @@
           {
             "name": "body",
             "in": "body",
+            "description": "User data",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "oauthId": {
-                  "example": "any"
-                },
                 "username": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "johndoe"
+                },
+                "oauthId": {
+                  "type": "string",
+                  "example": "google-oauth2|1234567890"
                 },
                 "avatar": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "https://example.com/avatar.jpg"
                 },
                 "role": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "user"
                 }
               }
             }
@@ -227,6 +255,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -275,20 +306,26 @@
           {
             "name": "body",
             "in": "body",
+            "description": "User data",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "oauthId": {
-                  "example": "any"
-                },
                 "username": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "johndoe"
+                },
+                "oauthId": {
+                  "type": "string",
+                  "example": "google-oauth2|1234567890"
                 },
                 "avatar": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "https://example.com/avatar.jpg"
                 },
                 "role": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "user"
                 }
               }
             }
