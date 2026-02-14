@@ -5,10 +5,11 @@ const productsController = require('../controllers/products');
 
 const validation = require('../middleware/validate');
 const { validateProduct } = require('../middleware/validation');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', productsController.getAll);
 router.get('/:id', productsController.getSingle);
-router.post('/', validateProduct, validation.validate, (req, res) => {
+router.post('/', isAuthenticated, validateProduct, validation.validate, (req, res) => {
     /* #swagger.parameters['body'] = {
         in: 'body',
         description: 'Product data',
@@ -26,7 +27,7 @@ router.post('/', validateProduct, validation.validate, (req, res) => {
     productsController.createProduct(req, res);
 });
 
-router.put('/:id', validateProduct, validation.validate, (req, res) => {
+router.put('/:id', isAuthenticated, validateProduct, validation.validate, (req, res) => {
     /* #swagger.parameters['body'] = {
         in: 'body',
         description: 'Product data',
@@ -43,6 +44,6 @@ router.put('/:id', validateProduct, validation.validate, (req, res) => {
     } */
     productsController.updateProduct(req, res);
 });
-router.delete('/:id', productsController.deleteProduct);
+router.delete('/:id', isAuthenticated, productsController.deleteProduct);
 
 module.exports = router;

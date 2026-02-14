@@ -47,4 +47,38 @@ The API documentation is available via Swagger UI.
       ```
 4.  **Start Server**: Run `npm start`.
 
+## Week 6: Collections, Validation, & OAuth
+
+### Part 1: Orders & OAuth (Precious) (Completed)
+- **Orders Collection**: Implemented Controller, Routes, and Validation.
+- **Validation**: Centralized in `middleware/validation.js`.
+- **OAuth Security**:
+  - Implemented GitHub Login via Passport module.
+  - Protected `POST`, `PUT`, `DELETE` routes for **Products** and **Orders**.
+  - Routes: `/login`, `/logout`, `/github/callback`.
+
+### Part 2: Reviews & Testing (Praise) (TODO)
+**Focus**: The "Reviews" collection, Unit Testing, and Swagger Updates.
+
+#### 1. Reviews Collection
+- [ ] Create `controllers/reviews.js`: `getAll`, `getSingle`, `createReview`, `updateReview`, `deleteReview`.
+- [ ] Routes: Create `routes/reviews.js`.
+- [ ] Validation: Add `validateReview` to `middleware/validation.js` (require `productId`, `userId`, `rating`, `comment`).
+
+#### 2. Unit Testing
+- [ ] Install `jest` and `supertest`.
+- [ ] Create `__tests__/get.spec.js`.
+- [ ] Write tests to verify `GET` routes for all 4 collections return 200 OK.
+
+#### 3. Swagger Update
+- [ ] Run `node swagger.js` to regenerate documentation including the new commands.
+
+### Setup Instructions (Week 6)
+1.  **Clone/Pull**: Get latest code.
+2.  **Install**: `npm install` (includes new passport deps).
+3.  **Environment Variables**:
+    - Ensure `.env` has `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, and `CALLBACK_URL`.
+    - `CALLBACK_URL` should match your dev environment (e.g., `http://localhost:8080/github/callback`).
+4.  **Start**: `npm start`.
+
 

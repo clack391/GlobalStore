@@ -17,7 +17,15 @@ const validateUser = [
     body('role').optional().isString().withMessage('Role must be a string')
 ];
 
+const validateOrder = [
+    body('userId').notEmpty().withMessage('User ID is required'),
+    body('productId').notEmpty().withMessage('Product ID is required'),
+    body('quantity').isInt({ min: 1 }).withMessage('Quantity must be an integer greater than 0'),
+    body('status').notEmpty().withMessage('Status is required')
+];
+
 module.exports = {
     validateProduct,
-    validateUser
+    validateUser,
+    validateOrder
 };
