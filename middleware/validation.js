@@ -12,7 +12,8 @@ const validateProduct = [
 
 const validateUser = [
     body('username').notEmpty().withMessage('Username is required'),
-    body('oauthId').notEmpty().withMessage('OAuth ID is required'),
+    body('email').isEmail().withMessage('Must be a valid email address'),
+    body('oauthId').optional().isString().withMessage('OAuth ID must be a string'),
     body('avatar').optional().isString().withMessage('Avatar must be a string'),
     body('role').optional().isString().withMessage('Role must be a string')
 ];
@@ -24,8 +25,16 @@ const validateOrder = [
     body('status').notEmpty().withMessage('Status is required')
 ];
 
+const validateReview = [
+    body('productId').notEmpty().withMessage('Product ID is required'),
+    body('userId').notEmpty().withMessage('User ID is required'),
+    body('rating').isNumeric().withMessage('Rating must be a number'),
+    body('comment').isString().notEmpty().withMessage('Comment is required')
+];
+
 module.exports = {
     validateProduct,
     validateUser,
-    validateOrder
+    validateOrder,
+    validateReview
 };
