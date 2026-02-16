@@ -8,7 +8,6 @@
   "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
@@ -28,26 +27,6 @@
         "responses": {
           "default": {
             "description": ""
-          }
-        }
-      }
-    },
-    "/github/callback": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
