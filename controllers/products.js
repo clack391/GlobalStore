@@ -2,6 +2,10 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
+    /*
+        #swagger.tags = ['Products']
+        #swagger.summary = 'Get all products'
+    */
     try {
         const result = await mongodb.getDb().collection('products').find().toArray();
         res.setHeader('Content-Type', 'application/json');
@@ -12,6 +16,10 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    /*
+        #swagger.tags = ['Products']
+        #swagger.summary = 'Get a single product by ID'
+    */
     try {
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json('Must use a valid product id to find a product.');
@@ -30,7 +38,12 @@ const getSingle = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
+    /*
+        #swagger.tags = ['Products']
+        #swagger.summary = 'Create a new product'
+    */
     try {
+        // ... existing logic ...
         const product = {
             name: req.body.name,
             price: req.body.price,
@@ -52,10 +65,15 @@ const createProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
+    /*
+        #swagger.tags = ['Products']
+        #swagger.summary = 'Update a product by ID'
+    */
     try {
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json('Must use a valid product id to update a product.');
         }
+        // ... existing logic ...
         const productId = new ObjectId(req.params.id);
         const product = {
             name: req.body.name,
@@ -78,7 +96,12 @@ const updateProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
+    /*
+        #swagger.tags = ['Products']
+        #swagger.summary = 'Delete a product by ID'
+    */
     try {
+        // ... existing logic ...
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json('Must use a valid product id to delete a product.');
         }

@@ -8,12 +8,15 @@
   "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
     "/products/": {
       "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get all products",
         "description": "",
         "produces": [
           "application/json"
@@ -28,6 +31,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Create a new product",
         "description": "",
         "parameters": [
           {
@@ -88,6 +95,10 @@
     },
     "/products/{id}": {
       "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get a single product by ID",
         "description": "",
         "produces": [
           "application/json"
@@ -116,6 +127,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Update a product by ID",
         "description": "",
         "parameters": [
           {
@@ -180,6 +195,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Delete a product by ID",
         "description": "",
         "parameters": [
           {
@@ -207,6 +226,10 @@
     },
     "/users/": {
       "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get all users",
         "description": "",
         "produces": [
           "application/json"
@@ -221,6 +244,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create a new user",
         "description": "",
         "parameters": [
           {
@@ -266,6 +293,10 @@
     },
     "/users/{id}": {
       "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a single user by ID",
         "description": "",
         "produces": [
           "application/json"
@@ -294,6 +325,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update a user by ID",
         "description": "",
         "parameters": [
           {
@@ -343,6 +378,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Delete a user by ID",
         "description": "",
         "parameters": [
           {
