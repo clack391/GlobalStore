@@ -57,21 +57,21 @@ The API documentation is available via Swagger UI.
   - Protected `POST`, `PUT`, `DELETE` routes for **Products** and **Orders**.
   - Routes: `/login`, `/logout`, `/github/callback`.
 
-### Part 2: Reviews & Testing (Praise) (TODO)
+### Part 2: Reviews & Testing (Praise) (Completed)
 **Focus**: The "Reviews" collection, Unit Testing, and Swagger Updates.
 
 #### 1. Reviews Collection
-- [ ] Create `controllers/reviews.js`: `getAll`, `getSingle`, `createReview`, `updateReview`, `deleteReview`.
-- [ ] Routes: Create `routes/reviews.js`.
-- [ ] Validation: Add `validateReview` to `middleware/validation.js` (require `productId`, `userId`, `rating`, `comment`).
+- [x] Create `controllers/reviews.js`: `getAll`, `getSingle`, `createReview`, `updateReview`, `deleteReview`.
+- [x] Routes: Created `routes/reviews.js`.
+- [x] Validation: Added `validateReview` to `middleware/validation.js` (requires `productId`, `userId`, `rating`, `comment`).
 
 #### 2. Unit Testing
-- [ ] Install `jest` and `supertest`.
-- [ ] Create `__tests__/get.spec.js`.
-- [ ] Write tests to verify `GET` routes for all 4 collections return 200 OK.
+- [x] Installed `jest` and `supertest`.
+- [x] Created `__tests__/get.spec.js`.
+- [x] Wrote tests to verify `GET` routes for all 4 collections return 200 OK.
 
 #### 3. Swagger Update
-- [ ] Run `node swagger.js` to regenerate documentation including the new commands.
+- [x] Ran `node swagger.js` to regenerate documentation including the new commands.
 
 ### Setup Instructions (Week 6)
 1.  **Clone/Pull**: Get latest code.
